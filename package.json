@@ -1,0 +1,21 @@
+{
+  "name": "nanyconfig",
+  "version": "0.0.1",
+  "description": "node wrapper for the anyconfig project",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --recursive test/",
+    "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
+  },
+  "author": "hank <yuanhang.zheng@qq.com> (http://itlodge.github.io)",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
+  }
+}

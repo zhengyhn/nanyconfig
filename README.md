@@ -11,8 +11,9 @@ You must know what is the [anyconfig](https://github.com/zhengyhn/anyconfig) pro
 const NAnyConfig = require('nanyconfig');
 
 const options = {
-  token: '013918fe4ab81be96cc52a37ce6dd8db',
-  url: 'http://localhost:8080'
+  token: '013918fe4ab81be96cc52a37ce6dd8db',   // the token of the anyconfig project
+  url: 'http://localhost:8080',                // the url of the anyconfig project
+  timeout: 2000                                // http request timeout, default is 5000ms
 };
 
 const anyConfig = new NAnyConfig(options);

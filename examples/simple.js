@@ -1,15 +1,19 @@
 var NAnyConfig = require('../index.js');
 
-var anyConfig = new NAnyConfig({url: 'http://localhost:8080', token: '123'});
+var anyConfig = new NAnyConfig({
+  url: 'http://localhost:8081',
+  token: '013918fe4ab81be96cc52a37ce6dd8db',
+  timeout: 5000
+});
 
-anyConfig.get('crawler.updateInterval', function (err, value) {
+anyConfig.get('xxx', function (err, value) {
   if (err) {
     return console.error(err);
   }
   console.info('callback: ' + value);
 });
 
-anyConfig.get('crawler.updateInterval').then(function (value) {
+anyConfig.get('xxx').then(function (value) {
   console.info('promise: ' + value);
 }).catch(function (err) {
   console.error(err);

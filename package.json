@@ -1,7 +1,7 @@
 {
   "name": "nanyconfig",
-  "version": "0.0.2",
-  "description": "node wrapper for the anyconfig project",
+  "version": "0.0.3",
+  "description": "Node wrapper for the anyconfig project",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha --recursive test/",

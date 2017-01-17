@@ -92,4 +92,55 @@ describe('Test the node wrapper of anyConfig', function () {
       });
     });
   });
+
+  describe('Test the getMultiple method, promise', function () {
+    this.timeout(10000);
+    var anyConfig = new NAnyConfig();
+
+    it('Pass nothing should return error', function (done) {
+      anyConfig.getMultiple().catch(function (err) {
+        err.should.exists;
+
+        done();
+      });
+    });
+
+    it('Wrong url should return http timeout error', function (done) {
+      anyConfig.getMultiple(['key']).catch(function (err) {
+        err.should.exists;
+        err.should.have.property('code', 'ECONNREFUSED');
+
+        done();
+      });
+    });
+
+    it('No cb param should return promise', function (done) {
+      var p = anyConfig.getMultiple(['key']);
+      p.should.be.Promise;
+
+      done();
+    });
+  });
+
+  describe('Test the getMultiple method, callback', function () {
+    var anyConfig = new NAnyConfig();
+
+    it('Pass empty key should callback error', function (done) {
+      anyConfig.getMultiple([''], function (err, result) {
+        err.should.exists;
+        should.not.exists(result);
+
+        done();
+      });
+    });
+
+    it('Wrong url should return http error', function (done) {
+      anyConfig.getMultiple(['key'], function (err) {
+        err.should.exists;
+        err.should.have.property('code', 'ECONNREFUSED');
+
+        done();
+      });
+    });
+  });
 });

@@ -6,15 +6,15 @@ var anyConfig = new NAnyConfig({
   timeout: 5000
 });
 
-anyConfig.get('xxx', function (err, value) {
+anyConfig.get('app.tabIcons', function (err, value) {
   if (err) {
     return console.error(err);
   }
-  console.info('callback: ' + value);
+  console.info('callback: ', value);
 });
 
 anyConfig.get('xxx').then(function (value) {
-  console.info('promise: ' + value);
+  console.info('promise: ', value);
 }).catch(function (err) {
   console.error(err);
 });

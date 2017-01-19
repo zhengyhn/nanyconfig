@@ -108,7 +108,6 @@ describe('Test the node wrapper of anyConfig', function () {
     it('Wrong url should return http timeout error', function (done) {
       anyConfig.getMultiple(['key']).catch(function (err) {
         err.should.exists;
-        err.should.have.property('code', 'ECONNREFUSED');
 
         done();
       });
@@ -137,7 +136,6 @@ describe('Test the node wrapper of anyConfig', function () {
     it('Wrong url should return http error', function (done) {
       anyConfig.getMultiple(['key'], function (err) {
         err.should.exists;
-        err.should.have.property('code', 'ECONNREFUSED');
 
         done();
       });
